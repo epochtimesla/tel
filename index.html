@@ -100,6 +100,11 @@
     var html0=elem.innerHTML;
     
     var phonenumber=GetQueryString("");
+    var nt = phonenumber.indexOf('=')
+    if(nt>=0){
+    	 phonenumber=phonenumber.substring(0,nt);
+    	
+    }
     var tel1="Call: " + phonenumber ;
     var html1=html0.replace("Call:", tel1);
     elem.innerHTML=html1;
@@ -107,6 +112,13 @@
     
     function callClick()
     {
+    
+      var phonenumber=GetQueryString("");
+      var nt = phonenumber.indexOf('=')
+      if(nt>=0){
+      	 phonenumber=phonenumber.substring(0,nt);
+    	
+      }
     
       var strtel="tel:"+GetQueryString("");
       window.location.href=strtel;     
